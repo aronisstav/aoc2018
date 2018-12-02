@@ -1,6 +1,8 @@
 #!/usr/bin/env escript
 -mode(native).
 
+%% https://adventofcode.com/2018/day/2
+
 main(Args) ->
   Input = lists:append(read_list("~s")),
   Answer =
@@ -28,6 +30,7 @@ checksum([String|Rest], #{2 := M, 3 := N}) ->
   {Add2, Add3} = twos_threes(String),
   checksum(Rest, #{2 => M + Add2, 3 => N + Add3}).
 
+%% Pattern match on sorted list of characters
 twos_threes(String) ->
   Sort = lists:sort(String),
   twos_threes(Sort, 0, 0).
@@ -40,6 +43,8 @@ twos_threes([X,X|R], _Add2, Add3) ->
 twos_threes([_|R], Add2, Add3) ->
   twos_threes(R, Add2, Add3).
 
+%% Generate candidates from each string by replacing one char with a
+%% 0 and store them in a map to detect duplicates.
 diffone(Strings) ->
   diffone(Strings, #{}).
 

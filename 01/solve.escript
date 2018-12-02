@@ -1,6 +1,8 @@
 #!/usr/bin/env escript
 -mode(native).
 
+%% https://adventofcode.com/2018/day/1
+
 main(Args) ->
   Nums = lists:append(read_list("~d")),
   Sol =
