@@ -1,7 +1,7 @@
 #!/usr/bin/env escript
 -mode(native).
 
-%% https://adventofcode.com/2018/day/11
+%% https://adventofcode.com/2018/day/12
 
 main(Args) ->
   {ok, [Initial]} = io:fread("", "initial state: ~s"),
